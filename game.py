@@ -19,12 +19,14 @@ class Hangman:
 
         while guesses < 10:
             if self.check_answer() == 'You won':
-                print(self.check_answer())
                 break
             
             guess = input('Guess a letter: ')
 
-            if guess in self.random_word and guess not in used_letters:
+            if guess == self.random_word:
+                self.masked_word = self.random_word
+                break
+            elif guess in self.random_word and guess not in used_letters:
                 used_letters += guess
                 self.masked_word = self.revealing_letters(self.masked_word, guess)
                 print(''.join(self.masked_word))
@@ -37,9 +39,11 @@ class Hangman:
                 guesses +=1
                 self.masked_word = self.revealing_letters(self.masked_word, guess)
                 print(''.join(self.masked_word))
+        
+        return self.check_answer()
+        
     def check_answer(self):
-
-        if self.random_word == ''.join(self.masked_word):
+        if self.random_word == ''.join(self.masked_word) or self.random_word == self.masked_word:
             return 'You won'
         else:
             return 'You lost'
