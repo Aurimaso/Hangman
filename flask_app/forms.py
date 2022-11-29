@@ -5,9 +5,6 @@ from wtforms import (
     PasswordField,
     SubmitField,
     BooleanField,
-    FloatField,
-    IntegerField,
-    SelectField,
 )
 from wtforms.validators import DataRequired, Email, EqualTo
 
