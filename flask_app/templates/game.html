@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Game</h1>
+<img src="{{tries}}" />
+<div>{{ counter }}</div>
+<div class="form">
+  <form action="/game" method="POST">
+    <input type="text" name="content" id="content" />
+    <input type="submit" value="Guess" />
+  </form>
+</div>
+<p>
+  This is your secret word:
+  <span style="letter-spacing: 10px">{{ masked_word }}</span>
+</p>
+<p>
+  Your guesses so far:
+  <span style="letter-spacing: 10px">{{ guesses_made }}</span>
+</p>
+
+{% endblock %}
