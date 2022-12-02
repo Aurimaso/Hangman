@@ -2,4 +2,4 @@ venv
 testing_code.py
 __pycache__
 hangman_web.log
-flask_app/testting_hangman.py
+flask_app/test_hangman.py
