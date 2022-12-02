@@ -63,7 +63,7 @@
 # for x in list_of_guesses:
 #     for i in x:
 #         try:
-#             dict[i] += 1      
+#             dict[i] += 1
 #         except:
 #             dict[i] = 1
 # print(dict)
@@ -91,21 +91,27 @@
 # random_word = random.choice(words)
 # print(random_word)  # 👉️ sales
 
-test = 'hello'
-dict = {'a':1, 'b':2, 'c':3}
+# test = "hello"
+# dict = {"a": 1, "b": 2, "c": 3}
 # print(list(dict.keys())[0])
 # print(type(list(dict.keys())[0]))
 # print(type(test))
 # print(test + list(dict.keys())[0] + str(list(dict.values())[0]))
 # print(list(dict.values())[0])
 
-def from_dictionary_to_string(dict):
-    new_string = ''
-    for x in range(len(dict)):
-        new_string += f'{str(list(dict.keys())[x])}:{str(list(dict.values())[x])} '
-    return new_string
 
+# def from_dictionary_to_string(dict):
+#     new_string = ""
+#     for x in range(len(dict)):
+#         new_string += f"{str(list(dict.keys())[x])}:{str(list(dict.values())[x])} "
+#     return new_string
+
+
+# # print(from_dictionary_to_string(dict))
 # print(from_dictionary_to_string(dict))
-print(from_dictionary_to_string(dict))
 
+txt = "Comp1anyX"
 
+x = txt.isalpha()
+
+print(x) 
