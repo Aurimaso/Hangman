@@ -1,5 +1,5 @@
-from flask_app import app, db, bcrypt, forms
 from flask import render_template, redirect, url_for, flash, request, Response
+from flask_app import app, db, bcrypt, forms
 from flask_login import login_required, current_user, login_user, logout_user
 from flask_app.models import User, Game
 from flask_app import hangman
