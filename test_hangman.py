@@ -1,8 +1,9 @@
 import unittest
-import hangman
+from unittest.mock import Mock
+import flask_app.hangman as hangman
 
 
-class TestAritmetika(unittest.TestCase):
+class TestHangman(unittest.TestCase):
     def test_masking_word(self):
         self.assertEqual("____", hangman.masking_word("test"))
         self.assertRaises(TypeError, hangman.masking_word, 2)
@@ -32,14 +33,14 @@ class TestAritmetika(unittest.TestCase):
             ["h", "a", "n", "g"], hangman.converting_string_to_list("hang")
         )
 
-    def test_from_dictionary_to_string(self):
-        self.assertEqual(
-            "a: 1; b: 2; c: 3; ",
-            hangman.from_dictionary_to_string({"a": 1, "b": 2, "c": 3}),
-        )
-        self.assertEqual(
-            "a: a; b: b; c: c; ",
-            hangman.from_dictionary_to_string({"a": "a", "b": "b", "c": "c"}),
+    def test_get_all_guesses_from_db(self):
+        first_mock = Mock()
+        first_mock.guesses_made = "ABC"
+        second_mock = Mock()
+        second_mock.guesses_made = "BCD"
+        self.assertTrue(
+            {"A": 1, "B": 2, "C": 2, "D": 1},
+            hangman.get_all_guesses_from_db([first_mock, second_mock]),
         )
 
 

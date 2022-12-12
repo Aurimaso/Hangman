@@ -1,8 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
 <h1>Statistics</h1>
-<p>Total games: {{ count }}</p>
-<p>Player won: {{ won }}</p>
-<p>Player lost: {{ lost }}</p>
-<p>Guesses made: {{ guesses }}</p>
-{% endblock %}
+<p>Total games were played: {{ count }}</p>
+<p>Wins: {{ won }}</p>
+<p>Lost games: {{ lost }}</p>
+<p>Guesses made in all games:</p>
+{% for name in guesses %}
+<tr>
+  <td>{{ name }} - {{ guesses[name] }}</td>
+  <br />
+</tr>
+{% endfor %} {% endblock %}

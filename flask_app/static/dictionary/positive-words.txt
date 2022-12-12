@@ -76,7 +76,6 @@ agility
 agreeable
 agreeableness
 agreeably
-all-around
 alluring
 alluringly
 altruistic
@@ -193,12 +192,7 @@ benevolence
 benevolent
 benifits
 best
-best-known
-best-performing
-best-selling
 better
-better-known
-better-than-expected
 beutifully
 blameless
 bless
@@ -221,7 +215,6 @@ boundless
 bountiful
 brainiest
 brainy
-brand-new
 brave
 bravery
 bravo
@@ -291,7 +284,6 @@ cleanest
 cleanliness
 cleanly
 clear
-clear-cut
 cleared
 clearer
 clearly
@@ -363,10 +355,6 @@ cooperatively
 cornerstone
 correct
 correctly
-cost-effective
-cost-saving
-counter-attack
-counter-attacks
 courage
 courageous
 courageously
@@ -381,7 +369,6 @@ credible
 crisp
 crisper
 cure
-cure-all
 cushy
 cute
 cuteness
@@ -396,8 +383,6 @@ dawn
 dazzle
 dazzled
 dazzling
-dead-cheap
-dead-on
 decency
 decent
 decisive
@@ -440,7 +425,6 @@ diligence
 diligent
 diligently
 diplomatic
-dirt-cheap
 distinction
 distinctive
 distinguished
@@ -456,7 +440,6 @@ doubtless
 dreamland
 dumbfounded
 dumbfounding
-dummy-proof
 durable
 dynamic
 eager
@@ -473,7 +456,6 @@ easiest
 easiness
 easing
 easy
-easy-to-use
 easygoing
 ebullience
 ebullient
@@ -537,8 +519,6 @@ endorses
 endorsing
 energetic
 energize
-energy-efficient
-energy-saving
 engaging
 engrossing
 enhance
@@ -589,7 +569,6 @@ enviousness
 envy
 equitable
 ergonomical
-err-free
 erudite
 ethical
 eulogize
@@ -659,8 +638,6 @@ exult
 exultant
 exultation
 exultingly
-eye-catch
-eye-catching
 eyecatch
 eyecatching
 fabulous
@@ -691,11 +668,8 @@ fascination
 fashionable
 fashionably
 fast
-fast-growing
-fast-paced
 faster
 fastest
-fastest-growing
 faultless
 fav
 fave
@@ -710,7 +684,6 @@ fearlessly
 feasible
 feasibly
 feat
-feature-rich
 fecilitous
 feisty
 felicitate
@@ -726,14 +699,10 @@ festive
 fidelity
 fiery
 fine
-fine-looking
 finely
 finer
 finest
 firmer
-first-class
-first-in-class
-first-rate
 flashy
 flatter
 flattering
@@ -822,8 +791,6 @@ glory
 glow
 glowing
 glowingly
-god-given
-god-send
 godlike
 godsend
 gold
@@ -873,7 +840,6 @@ hallmarks
 hallowed
 handier
 handily
-hands-down
 handsome
 handsomely
 handy
@@ -881,7 +847,6 @@ happier
 happily
 happiness
 happy
-hard-working
 hardier
 hardy
 harmless
@@ -909,8 +874,6 @@ heroically
 heroine
 heroize
 heros
-high-quality
-high-spirited
 hilarious
 holy
 homage
@@ -1033,9 +996,6 @@ irreplaceable
 irreproachable
 irresistible
 irresistibly
-issue-free
-jaw-droping
-jaw-dropping
 jollify
 jolly
 jovial
@@ -1054,19 +1014,16 @@ justly
 keen
 keenly
 keenness
-kid-friendly
 kindliness
 kindly
 kindness
 knowledgeable
 kudos
-large-capacity
 laud
 laudable
 laudably
 lavish
 lavishly
-law-abiding
 lawful
 lawfully
 lead
@@ -1081,7 +1038,6 @@ liberate
 liberation
 liberty
 lifesaver
-light-hearted
 lighter
 likable
 like
@@ -1091,7 +1047,6 @@ liking
 lionhearted
 lively
 logical
-long-lasting
 lovable
 lovably
 love
@@ -1101,11 +1056,6 @@ lovely
 lover
 loves
 loving
-low-cost
-low-price
-low-priced
-low-risk
-lower-priced
 loyal
 loyalty
 lucid
@@ -1176,7 +1126,6 @@ meticulous
 meticulously
 mightily
 mighty
-mind-blowing
 miracle
 miracles
 miraculous
@@ -1190,7 +1139,6 @@ monumental
 monumentally
 morality
 motivated
-multi-purpose
 navigable
 neat
 neatest
@@ -1204,8 +1152,6 @@ nimble
 noble
 nobly
 noiseless
-non-violence
-non-violent
 notably
 noteworthy
 nourish
@@ -1246,7 +1192,6 @@ overtakes
 overtaking
 overtook
 overture
-pain-free
 painless
 painlessly
 palatial
@@ -1326,7 +1271,6 @@ powerfully
 praise
 praiseworthy
 praising
-pre-eminent
 precious
 precise
 precisely
@@ -1350,8 +1294,6 @@ privilege
 privileged
 prize
 proactive
-problem-free
-problem-solver
 prodigious
 prodigiously
 prodigy
@@ -1417,7 +1359,6 @@ raptureously
 rapturous
 rapturously
 rational
-razor-sharp
 reachable
 readable
 readily
@@ -1440,7 +1381,6 @@ recommendations
 recommended
 reconcile
 reconciliation
-record-setting
 recover
 recovery
 rectification
@@ -1538,10 +1478,7 @@ rightful
 rightfully
 rightly
 rightness
-risk-free
 robust
-rock-star
-rock-stars
 rockstar
 rockstars
 romantic
@@ -1577,11 +1514,6 @@ seasoned
 secure
 securely
 selective
-self-determination
-self-respect
-self-satisfaction
-self-sufficiency
-self-sufficient
 sensation
 sensational
 sensationally
@@ -1672,7 +1604,6 @@ stabilize
 stable
 stainless
 standout
-state-of-the-art
 stately
 statuesque
 staunch
@@ -1803,11 +1734,8 @@ thrillingly
 thrills
 thrive
 thriving
-thumb-up
-thumbs-up
 tickle
 tidy
-time-honored
 timely
 tingle
 titillate
@@ -1815,10 +1743,7 @@ titillating
 titillatingly
 togetherness
 tolerable
-toll-free
 top
-top-notch
-top-quality
 topnotch
 tops
 tough
@@ -1837,7 +1762,6 @@ triumphant
 triumphantly
 trivially
 trophy
-trouble-free
 trump
 trumpet
 trust
@@ -1851,7 +1775,6 @@ truthful
 truthfully
 truthfulness
 twinkly
-ultra-crisp
 unabashed
 unabashedly
 unaffected
@@ -1898,8 +1821,6 @@ upscale
 usable
 useable
 useful
-user-friendly
-user-replaceable
 valiant
 valiantly
 valor
@@ -1933,26 +1854,6 @@ warmth
 wealthy
 welcome
 well
-well-backlit
-well-balanced
-well-behaved
-well-being
-well-bred
-well-connected
-well-educated
-well-established
-well-informed
-well-intentioned
-well-known
-well-made
-well-managed
-well-mannered
-well-positioned
-well-received
-well-regarded
-well-rounded
-well-run
-well-wishers
 wellbeing
 whoa
 wholeheartedly
@@ -1987,9 +1888,7 @@ work
 workable
 worked
 works
-world-famous
 worth
-worth-while
 worthiness
 worthwhile
 worthy

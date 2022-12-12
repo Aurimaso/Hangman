@@ -22,7 +22,13 @@ class Game(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     def __init__(
-        self, outcome, word, guesses_made, progress, mistakes, user_id
+        self,
+        outcome: str,
+        word: str,
+        guesses_made: str,
+        progress: str,
+        mistakes: int,
+        user_id: int,
     ) -> None:
         self.outcome = outcome
         self.guesses_made = guesses_made

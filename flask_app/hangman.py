@@ -1,18 +1,20 @@
 import random
+from typing import List
+from flask_app.models import Game
 
 
 def get_word(path: str) -> str:
     with open(path, "r") as file:
-        allText = file.read()
-        words = list(map(str, allText.split()))
+        all_text = file.read()
+        words = list(map(str, all_text.split()))
         return random.choice(words)
 
 
 def masking_word(word: str) -> str:
-    masked_word = []
+    masked_word = ""
     for _ in word:
-        masked_word.append("_")
-    return "".join(masked_word)
+        masked_word += "_"
+    return masked_word
 
 
 def letter_in_string(guess: str, word: str) -> bool:
@@ -22,8 +24,8 @@ def letter_in_string(guess: str, word: str) -> bool:
         return False
 
 
-def check_winner(word: str, progress: str) -> bool:
-    if word == progress:
+def check_winner(actual_word: str, guessed_progress: str) -> bool:
+    if actual_word == guessed_progress:
         return True
     else:
         return False
@@ -48,23 +50,16 @@ def converting_string_to_list(word: str) -> list:
     return list
 
 
-def get_all_guesses_from_db(game_from_db: object) -> dict:
-    list_of_guesses = []
-    dict = {}
-    for x in game_from_db.all():
-        list_of_guesses.append(x.guesses_made)
+def get_all_guesses_from_db(games: List[Game]) -> dict:
+    guesses = []
+    guesses_dict = {}
+    for game in games:
+        guesses.append(game.guesses_made)
 
-    for x in list_of_guesses:
-        for i in x:
+    for guess in guesses:
+        for i in guess:
             try:
-                dict[i] += 1
+                guesses_dict[i] += 1
             except:
-                dict[i] = 1
-    return dict
-
-
-def from_dictionary_to_string(dict: dict) -> str:
-    new_string = ""
-    for x in range(len(dict)):
-        new_string += f"{str(list(dict.keys())[x])}: {str(list(dict.values())[x])}; "
-    return new_string
+                guesses_dict[i] = 1
+    return guesses_dict

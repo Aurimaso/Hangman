@@ -58,7 +58,7 @@ def register() -> (Response | str):
             return redirect(url_for("register"))
         except Exception as e:
             logging.error(f"Registration failed, reason: {e}")
-            flash(f"Registration failed, please try again laiter.",  "danger")
+            flash(f"Registration failed, please try again laiter.", "danger")
             return redirect(url_for("register"))
     return render_template("register.html", form=form, title="register")
 
@@ -71,52 +71,73 @@ def game_post() -> str:
         .order_by(Game.id.desc())
         .first()
     )
-    letter = request.form["content"].lower()
-    if letter.isalpha() == False or len(letter) > 1:
-        flash(f"Wrong input",  "danger")
+    user_guess = request.form["guess"].lower()
+    if user_guess.isalpha() == False:
+        flash(f"Wrong input", "danger")
         return render_template(
             "game.html",
             masked_word=game_from_db.progress,
-            tries=f"/static/images/atempt{game_from_db.mistakes}.png",
+            visual=f"/static/images/atempt{game_from_db.mistakes}.png",
             counter=game_from_db.mistakes,
-            guesses_made=game_from_db.guesses_made,)
-    if hangman.letter_in_string(letter, game_from_db.guesses_made.lower()) == False:
-        game_from_db.guesses_made += letter.upper()
-    if hangman.letter_in_string(letter, game_from_db.word):
+            guesses_made=game_from_db.guesses_made,
+        )
+    if hangman.check_winner(user_guess, game_from_db.word):
+        game_from_db.outcome = "won"
+        db.session.add(game_from_db)
+        db.session.commit()
+        return render_template("win.html", secret_word=game_from_db.word)
+    if (
+        hangman.letter_in_string(user_guess, game_from_db.word)
+        and hangman.letter_in_string(user_guess, game_from_db.guesses_made.lower())
+        == False
+    ):
         new_progress = hangman.revealing_letters(
-            game_from_db.word, game_from_db.progress, letter
+            game_from_db.word, game_from_db.progress, user_guess
         )
         game_from_db.progress = new_progress
+        game_from_db.guesses_made += user_guess.upper()
         db.session.add(game_from_db)
         db.session.commit()
         if hangman.check_winner(game_from_db.word, game_from_db.progress):
             game_from_db.outcome = "won"
             db.session.add(game_from_db)
             db.session.commit()
-            return render_template("win.html", secret_word = game_from_db.word)
+            return render_template("win.html", secret_word=game_from_db.word)
         return render_template(
             "game.html",
             masked_word=new_progress,
-            tries=f"/static/images/atempt{game_from_db.mistakes}.png",
+            visual=f"/static/images/atempt{game_from_db.mistakes}.png",
             counter=game_from_db.mistakes,
             guesses_made=game_from_db.guesses_made,
         )
-    else:
+    if (
+        hangman.letter_in_string(user_guess, game_from_db.word.lower()) == False
+        and hangman.letter_in_string(user_guess, game_from_db.guesses_made.lower())
+        == False
+    ):
         game_from_db.mistakes += 1
+        game_from_db.guesses_made += user_guess.upper()
         db.session.add(game_from_db)
         db.session.commit()
         if game_from_db.mistakes >= 10:
             game_from_db.outcome = "lost"
             db.session.add(game_from_db)
             db.session.commit()
-            return render_template("loose.html", secret_word = game_from_db.word)
+            return render_template("loose.html", secret_word=game_from_db.word)
         return render_template(
             "game.html",
             masked_word=game_from_db.progress,
-            tries=f"/static/images/atempt{game_from_db.mistakes}.png",
+            visual=f"/static/images/atempt{game_from_db.mistakes}.png",
             counter=game_from_db.mistakes,
             guesses_made=game_from_db.guesses_made,
         )
+    return render_template(
+        "game.html",
+        masked_word=game_from_db.progress,
+        visual=f"/static/images/atempt{game_from_db.mistakes}.png",
+        counter=game_from_db.mistakes,
+        guesses_made=game_from_db.guesses_made,
+    )
 
 
 @app.route("/game", methods=["GET"])
@@ -129,13 +150,14 @@ def game_get() -> str:
         .order_by(Game.id.desc())
         .first()
     )
+
     if game_from_db and game_from_db.outcome == "In progress":
         masked_word_db = game_from_db.progress
         mistakes = game_from_db.mistakes
         return render_template(
             "game.html",
             masked_word=masked_word_db,
-            tries=f"/static/images/atempt{mistakes}.png",
+            visual=f"/static/images/atempt{mistakes}.png",
             counter=mistakes,
             guesses_made=game_from_db.guesses_made,
         )
@@ -144,14 +166,19 @@ def game_get() -> str:
         random_word = hangman.get_word(PATH_OF_FUN_WORDS)
         masked_word_db = hangman.masking_word(random_word)
         game = Game(
-            "In progress", random_word, "", masked_word_db, 0, current_user.get_id()
+            outcome="In progress",
+            word=random_word,
+            guesses_made="",
+            progress=masked_word_db,
+            mistakes=0,
+            user_id=current_user.get_id(),
         )
         db.session.add(game)
         db.session.commit()
         return render_template(
             "game.html",
             masked_word=masked_word_db,
-            tries="/static/images/atempt0.png",
+            visual="/static/images/atempt0.png",
             counter=0,
         )
 
@@ -168,9 +195,7 @@ def stats() -> str:
         count=count,
         won=won,
         lost=lost,
-        guesses=hangman.from_dictionary_to_string(
-            hangman.get_all_guesses_from_db(game_from_db)
-        ),
+        guesses=hangman.get_all_guesses_from_db(game_from_db.all()),
     )
 
 
