@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %}
 
 <h1>Game</h1>
-<img src="{{tries}}" />
-<div>{{ counter }}</div>
+<img src="{{visual}}" style="width: 500px; height: auto" />
+<div>{{ counter }}/10 mistakes</div>
 <div class="form">
   <form action="/game" method="POST">
-    <input type="text" name="content" id="content" maxlength="1" />
+    <input type="text" name="guess" id="guess" />
     <input class="button" type="submit" value="Guess" />
   </form>
 </div>

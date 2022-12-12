@@ -1,5 +1,4 @@
 venv
-testing_code.py
 __pycache__
 hangman_web.log
-flask_app/test_hangman.py
+.mypy_cache

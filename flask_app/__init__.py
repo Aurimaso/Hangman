@@ -17,7 +17,7 @@ db = SQLAlchemy(app)
 app.app_context().push()
 db.create_all()
 
-from flask_app.models import User, Game
+from flask_app.models import User
 
 bcrypt = Bcrypt(app)
 

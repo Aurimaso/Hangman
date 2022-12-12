@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block content %}
 
 <h1>You lost</h1>
-<img src="/static/images/atempt10.png" />
+<img src="/static/images/atempt10.png" style="width: 500px; height: auto" />
 <br />
 <p>Your secret word was: {{ secret_word }}</p>
 <button onclick="location.href='/game'">Play again</button>
 <br />
-<button onclick="location.href='/stats'">Wiev stats</button>
+<button onclick="location.href='/stats'">View stats</button>
 {% endblock %}
