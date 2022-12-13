@@ -17,7 +17,7 @@ def masking_word(word: str) -> str:
     return masked_word
 
 
-def letter_in_string(guess: str, word: str) -> bool:
+def find_letter_in_string(guess: str, word: str) -> bool:
     if guess in word:
         return True
     else:
@@ -51,15 +51,15 @@ def converting_string_to_list(word: str) -> list:
 
 
 def get_all_guesses_from_db(games: List[Game]) -> dict:
-    guesses = []
+    guesses_list_from_all_games = []
     guesses_dict = {}
     for game in games:
-        guesses.append(game.guesses_made)
+        guesses_list_from_all_games.append(game.guesses_made)
 
-    for guess in guesses:
-        for i in guess:
+    for guesses in guesses_list_from_all_games:
+        for letter in guesses:
             try:
-                guesses_dict[i] += 1
+                guesses_dict[letter] += 1
             except:
-                guesses_dict[i] = 1
+                guesses_dict[letter] = 1
     return guesses_dict

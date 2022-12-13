@@ -10,8 +10,8 @@ class TestHangman(unittest.TestCase):
         self.assertEqual("__", hangman.masking_word("tt"))
 
     def test_letter_in_string(self):
-        self.assertTrue(hangman.letter_in_string("a", "America"))
-        self.assertFalse(hangman.letter_in_string("v", "America"))
+        self.assertTrue(hangman.find_letter_in_string("a", "America"))
+        self.assertFalse(hangman.find_letter_in_string("v", "America"))
 
     def test_check_winner(self):
         self.assertTrue(hangman.check_winner("America", "America"))

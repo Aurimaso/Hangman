@@ -87,8 +87,8 @@ def game_post() -> str:
         db.session.commit()
         return render_template("win.html", secret_word=game_from_db.word)
     if (
-        hangman.letter_in_string(user_guess, game_from_db.word)
-        and hangman.letter_in_string(user_guess, game_from_db.guesses_made.lower())
+        hangman.find_letter_in_string(user_guess, game_from_db.word)
+        and hangman.find_letter_in_string(user_guess, game_from_db.guesses_made.lower())
         == False
     ):
         new_progress = hangman.revealing_letters(
@@ -111,8 +111,8 @@ def game_post() -> str:
             guesses_made=game_from_db.guesses_made,
         )
     if (
-        hangman.letter_in_string(user_guess, game_from_db.word.lower()) == False
-        and hangman.letter_in_string(user_guess, game_from_db.guesses_made.lower())
+        hangman.find_letter_in_string(user_guess, game_from_db.word.lower()) == False
+        and hangman.find_letter_in_string(user_guess, game_from_db.guesses_made.lower())
         == False
     ):
         game_from_db.mistakes += 1
