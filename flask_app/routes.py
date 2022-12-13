@@ -19,7 +19,7 @@ def index() -> str:
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login() -> str:
+def login() -> (Response | str):
     db.create_all()
     form = forms.LoginForm()
     if form.validate_on_submit():
@@ -34,7 +34,7 @@ def login() -> str:
 
 
 @app.route("/register", methods=["GET", "POST"])
-def register() -> str:
+def register() -> (Response | str):
     db.create_all()
     form = forms.RegistrationForm()
     if form.validate_on_submit():
