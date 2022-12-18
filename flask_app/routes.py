@@ -164,7 +164,7 @@ def game_get() -> str:
 
     else:
         random_word = hangman.get_word(PATH_OF_FUN_WORDS)
-        masked_word_db = hangman.masking_word(random_word)
+        masked_word_db = hangman.mask_word(random_word)
         game = Game(
             outcome="In progress",
             word=random_word,

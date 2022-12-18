@@ -5,9 +5,9 @@ import flask_app.hangman as hangman
 
 class TestHangman(unittest.TestCase):
     def test_masking_word(self):
-        self.assertEqual("____", hangman.masking_word("test"))
-        self.assertRaises(TypeError, hangman.masking_word, 2)
-        self.assertEqual("__", hangman.masking_word("tt"))
+        self.assertEqual("____", hangman.mask_word("test"))
+        self.assertRaises(TypeError, hangman.mask_word, 2)
+        self.assertEqual("__", hangman.mask_word("tt"))
 
     def test_letter_in_string(self):
         self.assertTrue(hangman.find_letter_in_string("a", "America"))

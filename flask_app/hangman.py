@@ -10,7 +10,7 @@ def get_word(path: str) -> str:
         return random.choice(words)
 
 
-def masking_word(word: str) -> str:
+def mask_word(word: str) -> str:
     masked_word = ""
     for _ in word:
         masked_word += "_"
