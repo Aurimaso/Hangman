@@ -3,5 +3,6 @@ __pycache__
 hangman_web.log
 .mypy_cache
 flask_app/hangman_app.db
+.vscode
 
 
