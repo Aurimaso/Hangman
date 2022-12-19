@@ -4,5 +4,6 @@ hangman_web.log
 .mypy_cache
 flask_app/hangman_app.db
 .vscode
+testing/__pycache__
 
 

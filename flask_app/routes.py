@@ -175,6 +175,10 @@ def game_get() -> str:
         )
         db.session.add(game)
         db.session.commit()
+        user = User.query.filter_by(id=current_user.get_id()).first()
+        logging.info(
+            f" New game was initiated by User: {user.email}, New word created for the game: {random_word}"
+        )
         return render_template(
             "game.html",
             masked_word=masked_word_db,
