@@ -20,26 +20,24 @@ def mask_word(word: str) -> str:
 def find_letter_in_string(guess: str, word: str) -> bool:
     if guess in word:
         return True
-    else:
-        return False
+    return False
 
 
 def check_winner(actual_word: str, guessed_progress: str) -> bool:
     if actual_word == guessed_progress:
         return True
-    else:
-        return False
+    return False
 
 
 def revealing_letters(word: str, progress: str, guess: str) -> str:
     listed_progrress = converting_string_to_list(progress)
-    i = 0
-    while i < len(word):
-        if guess == word[i]:
-            listed_progrress[i] = guess
-            i += 1
+    iteration_count = 0
+    while iteration_count < len(word):
+        if guess == word[iteration_count]:
+            listed_progrress[iteration_count] = guess
+            iteration_count += 1
         else:
-            i += 1
+            iteration_count += 1
     return "".join(listed_progrress)
 
 
